@@ -82,6 +82,19 @@ const Form = () => {
               {playerDetail.tier} {playerDetail.rank}{" "}
               {playerDetail.leaguePoints} LP
             </p>
+            <p>
+              {playerDetail.wins}W {playerDetail.losses}L
+            </p>
+            <p>
+              Win Rate{" "}
+              {(
+                (playerDetail.wins /
+                  (playerDetail.wins + playerDetail.losses)) *
+                100
+              ).toFixed()}
+              %
+            </p>
+            <p></p>
             <p></p>
             <p></p>
           </div>
