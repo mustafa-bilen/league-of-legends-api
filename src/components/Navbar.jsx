@@ -12,7 +12,7 @@ const Navbar = () => {
           className="ml-5"
         />
       </div>
-      <div className="flex text-5xl  items-center gap-4 ">
+      <div className="flex text-5xl  items-center gap-4">
         <a
           href="https://github.com/mustafa-bilen"
           rel="noopener noreferrer"

@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import Iron from "../assets/Emblem_Iron.png";
+import Bronze from "../assets/Emblem_Bronze.png";
+import Silver from "../assets/Emblem_Silver.png";
+import Gold from "../assets/Emblem_Gold.png";
+import Plat from "../assets/Emblem_Platinum.png";
+import Diamond from "../assets/Emblem_Diamond.png";
+import Master from "../assets/Emblem_Master.png";
+import Grandmaster from "../assets/Emblem_Grandmaster.png";
+import Cha from "../assets/Emblem_Challenger.png";
+
 const Form = () => {
   const [searchText, setSearchText] = useState("");
   const [playerData, setPlayerData] = useState(null);
@@ -8,8 +18,9 @@ const Form = () => {
   const [accId, setAccId] = useState(
     "XNDb6e0K7jMZF1_SrgKevQroPYlo5dR8aNhvVAaYq02QvOLakc5erWRPBg"
   );
-  const MAIN_API = `https://tr1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${searchText}?api_key=RGAPI-340158b3-f9b1-4b54-882a-0821298eb88f`;
-  const LEAGUE_API = `https://tr1.api.riotgames.com/lol/league/v4/entries/by-summoner/${accId}?api_key=RGAPI-340158b3-f9b1-4b54-882a-0821298eb88f`;
+
+  const MAIN_API = `https://tr1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${searchText}?api_key=RGAPI-c4f26d16-5ef9-4ab8-9511-a3cacdf84346`;
+  const LEAGUE_API = `https://tr1.api.riotgames.com/lol/league/v4/entries/by-summoner/${accId}?api_key=RGAPI-c4f26d16-5ef9-4ab8-9511-a3cacdf84346`;
 
   const getApi = () => {
     axios
@@ -69,7 +80,7 @@ const Form = () => {
       </div>
       <div>
         {playerData && (
-          <div className="flex flex-col justify-center items-center mt-20">
+          <div className="flex flex-col justify-center items-center gap-5 mt-20">
             <p className="text-3xl">{playerData.name}</p>
             <img
               src={`http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/${playerData.profileIconId}.png`}
@@ -94,9 +105,6 @@ const Form = () => {
               ).toFixed()}
               %
             </p>
-            <p></p>
-            <p></p>
-            <p></p>
           </div>
         )}
       </div>
